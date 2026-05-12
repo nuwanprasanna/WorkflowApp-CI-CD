@@ -1,0 +1,14 @@
+workflows:
+  ios-debug:
+    name: iOS Debug Build
+
+    environment:
+      flutter: stable
+      xcode: latest
+
+    scripts:
+      - flutter pub get
+      - flutter build ipa --debug
+
+    artifacts:
+      - build/ios/ipa/*.ipa
